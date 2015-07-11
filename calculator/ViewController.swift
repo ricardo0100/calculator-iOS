@@ -40,6 +40,7 @@ class ViewController: UIViewController {
         }
     }
 
+    //http://stackoverflow.com/questions/29457720/compiler-error-method-with-objective-c-selector-conflicts-with-previous-declara/29670644#29670644
     private func performOperation(operation: Double -> Double) {
         if operandStack.count >= 1 {
             displayValue = operation(operandStack.removeLast())
@@ -54,13 +55,12 @@ class ViewController: UIViewController {
         }
     }
 
-    
     var operandStack = Array<Double>()
     
     @IBAction func enter() {
         userIsInTheMiddleOfTypingANumber = false
         operandStack.append(displayValue)
-        println("operantStack = \(operandStack)")
+        print("operantStack = \(operandStack)")
     }
     
     var displayValue: Double {
